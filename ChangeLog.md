@@ -1,5 +1,69 @@
 # Tomb ChangeLog
 
+## 2.9
+### Jan 2021
+
+This release fixes all bugs introduced by the unfortunate 2.8 release
+series in 2020 as well introduces support for BTRFS formatted
+Tombs. The fixes are for password insertion to work on all desktops,
+as well the fix to a regression when using old Zsh versions. The new
+feature is activated by the '--filesystem' flag on 'lock' commands.
+It only supports BTRFS as internal filesystem of a Tomb instead of the
+default EXT4; resizing works as well to create and send or receive
+subvolumes and snapshots inside a Tomb. There are also some cleanups,
+small error handling improvements and no more need for suid actions by
+'forge' and 'dig' commands.
+
+
+
+## 2.8.1
+### Nov 2020
+
+This is a minor bugfix release. It fixes two bugs introduced by the
+previous release: the release of loopback devices and a typo affecting
+password insertion in text-only mode. It also provides a cosmetic fix
+for the output of 'tomb list' that now displays correct sizes. At
+last, the docker wrapper has been included in extras/ to be shipped in
+Tomb. The span of CVE-2020-28638 has been assessed with more precision
+and KNOWN_BUGS updated accordingly.
+
+## 2.8
+### Nov 2020
+
+This new release updates the documentation, improves usability and
+fixes two bugs. A bug has been found (CVE-2020-28638) to corrupt
+passwords entered using pinentry-curses on desktops using a X11
+DISPLAY, the documentation in KNOWN_BUGS outlines how to fix
+regressions. Another bug has been fixed to prevent mounting tombs that
+are already opened, a situation leading to potential data loss.
+Changes mentioned lead to a small internal refactoring and cleanup,
+leading to a change in the way volumes appear in /dev/mapper. Along
+the usability improvements are the support of GNUPGHOME environment
+variable to support non-standard GnuPG home locations as well updated
+translations and the fact that debug messages are now written to
+stderr, making it easier to parse stdout.
+
+## 2.7
+### Oct 2019
+
+Fixed getent parsing of passwd and notation of conditionals
+normalised.  A few other minor fixes and documentation improvements.
+
+
+## 2.6
+### May 2019
+
+This release adds new features and provides an important fix for usage
+of Tomb with cryptsetup 2.1 and future versions; it also fixes a
+whitespace bug in KDF passwords, all fixes are documented in
+KNOWN_BUGS. A notable new feature is the libsphinx integration for
+password-authenticated key agreement (PAKE). Another feature is the
+integration of cloakify to support new cloak/uncloak commands that
+hide keys inside long text files. Also support for gpg sub-keys has
+been added and overall gpg asymmetric key protection is improved.
+
+
+
 ## 2.5
 ### January 2018
 

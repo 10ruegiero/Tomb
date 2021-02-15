@@ -5,6 +5,7 @@
 Tomb needs a few programs to be installed on a system in order to work:
 
  * zsh
+ * file
  * sudo
  * gnupg
  * cryptsetup
@@ -102,7 +103,7 @@ To have it change directory `extras/gtk-tray` then
  3. run `sudo make install` (default PREFIX is `/usr/local`)
  4. start `tomb-gtk-tray tombname` after the tomb is open
 
-Of cource one can include the launch of tomb-gtk-tray scripts.
+Of course, one can include the launch of tomb-gtk-tray scripts.
 
 ## extras/qt-tray
 
@@ -163,7 +164,7 @@ Sure as Hell it can! Licensing issues aside ([GNU GPLv3+](COPYING)
 terms) Tomb provides machine-readable output and interaction via some
 flags:
 
-         flag   | function
+flag            | function
 --------------- | ------------------------------------------------
  --no-color     | avoids coloring output to allow parsing
  --unsafe       | allows passwords options and cleartext key from stdin

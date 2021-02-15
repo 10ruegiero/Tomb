@@ -55,6 +55,8 @@ command -v lsof > /dev/null && test_set_prereq LSOF
 command -v python2 > /dev/null && test_set_prereq PYTHON2
 command -v cloakify > /dev/null && test_set_prereq CLOAKIFY
 command -v decloakify > /dev/null && test_set_prereq DECLOAKIFY
+command -v sphinx > /dev/null && test_set_prereq SPHINX
+command -v oracle > /dev/null && test_set_prereq ORACLE
 
 
 # GnuPG config
@@ -65,6 +67,7 @@ export KEY1="A4857CD176B31435F9709D25F0E573B8289439CD"
 export KEY2="0B2235E660753AB0475FB3E23DC836481F44B31E"
 export SUBKEY1="D89BE71A935779961C130E50D9D7ACED39D3991C!"
 export SUBKEY2="843077BF7FD4A9C7BBFC3A69F065568B4F7D6CA9!"
+export KEY_UNTRUSTED="E6195F61F5EBA81FE4B1565AAC844B92004240CD"
 
 chmod 700 "$GNUPGHOME"
 
@@ -72,6 +75,10 @@ chmod 700 "$GNUPGHOME"
 # Dummy passwords used in the tests suite
 export DUMMYPASS=test
 export DUMMYPASSNEW=changetest
+
+# Dummy host and username for sphinx
+export DUMMYHOST=example.com
+export DUMMYUSER=user
 
 
 # Test helpers
@@ -110,7 +117,7 @@ tt() {
 }
 
 tt_dig() { tt dig "$tomb" "${@}"; }
-tt_forge() { tt forge "$tomb_key" --ignore-swap --unsafe --use-urandom "${@}"; }
+tt_forge() { tt forge "$tomb_key" --ignore-swap --unsafe "${@}"; }
 tt_lock() { tt lock "$tomb" -k "$tomb_key" --ignore-swap --unsafe "${@}"; }
 tt_open() { tt open "$tomb" -k "$tomb_key" --ignore-swap --unsafe "${@}"; }
 tt_close() { tt close "$testname" "${@}"; }

@@ -203,6 +203,7 @@ distributed Tomb's sourcecode:
 - [gtk-tray](extras/gtk-tray) is a graphical tray icon for GTK panels
 - [qt-tray](extras/qt-tray) is a graphical tray icon for QT panels
 - [tomber](extras/tomber) is a wrapper to use Tomb in Python scripts
+- [docker](extras/docker) is a wrapper to use Tomb through Docker
 
 ![skulls and pythons](https://github.com/dyne/Tomb/blob/master/extras/images/python_for_tomb.png)
 
@@ -289,8 +290,8 @@ IRC on https://irc.dyne.org channel **#dyne** (or direct port 9999 SSL)
 
 # Licensing
 
-Tomb is Copyright (C) 2007-2018 by the Dyne.org Foundation and
-maintained by Denis Roio <jaromil@dyne.org>. More information on all
+Tomb is Copyright (C) 2007-2021 by the Dyne.org Foundation and
+maintained by Denis Roio <J@dyne.org>. More information on all
 the developers involved is found in the [AUTHORS](AUTHORS.md) file.
 
 This source code is free software; you can redistribute it and/or
